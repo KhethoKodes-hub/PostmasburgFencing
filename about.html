@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Postmasburg Fencing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-dark: #1a472a;
+            --primary: #2d5a3d;
+            --primary-light: #3f7554;
+            --accent: #f4a261;
+            --accent-dark: #e76f51;
+            --light: #f8f9fa;
+            --dark: #333;
+            --gray: #666;
+            --white: #fff;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+            background-color: var(--light);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--white);
+        }
+        
+        .logo-subtext {
+            font-size: 0.8rem;
+            color: var(--accent);
+            margin-top: -5px;
+        }
+        
+        .contact-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        /* Navigation */
+        nav {
+            background: var(--primary-dark);
+            padding: 1rem 0;
+            position: sticky;
+            top: 68px;
+            z-index: 999;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(26, 71, 42, 0.85), rgba(45, 90, 61, 0.85)), 
+                        url('https://images.unsplash.com/photo-1581578021517-5d8ad8597850?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 10px;
+        }
+        
+        .breadcrumb li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .breadcrumb li:not(:last-child):after {
+            content: '/';
+            color: var(--white);
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-dark {
+            background: var(--white);
+        }
+        
+        .section-light {
+            background: var(--light);
+        }
+        
+        .section-title {
+            text-align: center;
+            color: var(--primary-dark);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            margin: 15px auto 30px;
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 50px;
+            font-size: 1.1rem;
+        }
+        
+        /* About Intro */
+        .about-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            color: var(--primary-dark);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--gray);
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, var(--accent) 0%, transparent 100%);
+            padding: 2px 0;
+            font-weight: 600;
+        }
+        
+        .about-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            height: 400px;
+            background-color: var(--primary-light);
+            background-size: cover;
+            background-position: center;
+        }
+        
+        /* Mission Vision */
+        .mission-vision {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .mission-card, .vision-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .mission-card:hover, .vision-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .mission-icon, .vision-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        
+        .mission-card h3, .vision-card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .team-member {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .member-image {
+            height: 300px;
+            background-color: var(--primary-light);
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .member-info {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .member-info h3 {
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+        }
+        
+        .member-role {
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .member-experience {
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .member-description {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* Values Section */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .value-item {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .value-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .value-item h4 {
+            color: var(--primary-dark);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Community Impact */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .impact-item {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .impact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .impact-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+        .impact-item h4 {
+            color: var(--primary-dark);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Certifications */
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .cert-item {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .cert-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .cert-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .cert-item h4 {
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+        
+        .cert-item p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h4 {
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid var(--primary);
+            padding-top: 20px;
+            text-align: center;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--accent-dark);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .about-intro, .mission-vision {
+                gap: 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--primary-dark);
+                padding: 20px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-intro, .mission-vision {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .about-image {
+                height: 300px;
+                order: -1;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo-text {
+                font-size: 1.5rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .mission-card, .vision-card, .value-item, .impact-item, .cert-item {
+                padding: 25px 20px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .slide-in {
+            transform: translateX(-50px);
+            opacity: 0;
+            animation: slideIn 0.8s ease forwards;
+        }
+        
+        @keyframes slideIn {
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .delay-1 {
+            animation-delay: 0.1s;
+        }
+        
+        .delay-2 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-3 {
+            animation-delay: 0.3s;
+        }
+        
+        .delay-4 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-5 {
+            animation-delay: 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon"><i class="fas fa-border-all"></i></div>
+                    <div>
+                        <div class="logo-text">Postmasburg Fencing</div>
+                        <div class="logo-subtext">Building Northern Cape Communities</div>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>073 961 6084</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>postmasburgfencing@mail.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="fade-in">About Our Company</h1>
+            <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li>About Us</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- About Intro -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="about-intro">
+                <div class="about-text slide-in">
+                    <h2>Rooted in Community, Built on Excellence</h2>
+                    <p>Established in 2012 and formally registered in 2014, <span class="highlight">Postmasburg Fencing</span> emerged from recognizing the gap in quality services for emerging black SMMEs in our rapidly growing community.</p>
+                    <p>Under the leadership of <strong>Mr. Andries Jacobs</strong>, who brings 12 years of plumbing expertise and 6 years in fencing, building, and paving, we've built our reputation on integrity, affordability, and community empowerment.</p>
+                    <p>Our mission goes beyond business - we're committed to <strong>eradicating poverty, uplifting and empowering youth</strong> by employing skilled workers from Postmasburg communities.</p>
+                </div>
+                <div class="about-image fade-in" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="section section-light">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Mission & Vision</h2>
+            <p class="section-subtitle fade-in">Guiding principles that drive our company forward</p>
+            
+            <div class="mission-vision">
+                <div class="mission-card fade-in delay-1">
+                    <div class="mission-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Our Mission</h3>
+                    <p>Postmasburg Fencing will strive to become number one in every market we serve and revolutionize this company to have the strength of a big company combined with the leanness and agility of a small company.</p>
+                </div>
+                
+                <div class="vision-card fade-in delay-2">
+                    <div class="vision-icon"><i class="fas fa-eye"></i></div>
+                    <h3>Our Vision</h3>
+                    <p>To be the best company in the Northern Cape in the eyes of our customers, communities and people. We expect and demand the best we have to offer by always keeping our values top of mind.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Leadership Team</h2>
+            <p class="section-subtitle fade-in">Experienced professionals dedicated to excellence</p>
+            
+            <div class="team-grid">
+                <div class="team-member fade-in delay-1">
+                    <div class="member-image" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="member-info">
+                        <h3>Mr. Andries Jacobs</h3>
+                        <div class="member-role">Owner & Director</div>
+                        <div class="member-experience">18+ Years Industry Experience</div>
+                        <p class="member-description">With 12 years of plumbing expertise and 6 years in fencing, building, and paving, Mr. Jacobs leads our company with a vision for community empowerment and excellence in service delivery.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member fade-in delay-2">
+                    <div class="member-image" style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="member-info">
+                        <h3>Leentjie Willemse</h3>
+                        <div class="member-role">Operations Manager</div>
+                        <div class="member-experience">15+ Years Industry Experience</div>
+                        <p class="member-description">Leentjie brings extensive experience in project management and operations, ensuring that every project is completed to the highest standards of quality and efficiency.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member fade-in delay-3">
+                    <div class="member-image" style="background-image: url('https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="member-info">
+                        <h3>Victoria Jacobs</h3>
+                        <div class="member-role">Finance & Administration</div>
+                        <div class="member-experience">10+ Years Industry Experience</div>
+                        <p class="member-description">Victoria manages our company's financial operations and administration, ensuring smooth business processes and compliance with all regulatory requirements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="section section-light">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Core Values</h2>
+            <p class="section-subtitle fade-in">The principles that guide everything we do</p>
+            
+            <div class="values-grid">
+                <div class="value-item fade-in delay-1">
+                    <div class="value-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h4>Integrity</h4>
+                    <p>Honest dealings in all our business relationships</p>
+                </div>
+                <div class="value-item fade-in delay-2">
+                    <div class="value-icon"><i class="fas fa-balance-scale"></i></div>
+                    <h4>Accountability</h4>
+                    <p>Taking responsibility for our work and commitments</p>
+                </div>
+                <div class="value-item fade-in delay-3">
+                    <div class="value-icon"><i class="fas fa-eye"></i></div>
+                    <h4>Transparency</h4>
+                    <p>Clear, open communication with all our clients</p>
+                </div>
+                <div class="value-item fade-in delay-4">
+                    <div class="value-icon"><i class="fas fa-handshake"></i></div>
+                    <h4>Respect</h4>
+                    <p>Treating everyone with dignity and professionalism</p>
+                </div>
+                <div class="value-item fade-in delay-5">
+                    <div class="value-icon"><i class="fas fa-clock"></i></div>
+                    <h4>Reliability</h4>
+                    <p>Consistent, dependable service you can count on</p>
+                </div>
+                <div class="value-item fade-in">
+                    <div class="value-icon"><i class="fas fa-heart"></i></div>
+                    <h4>Trust</h4>
+                    <p>Building lasting relationships through proven performance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Impact -->
+    <section class="section section-dark">
+        <div class="container">
+            <h2 class="section-title fade-in">Community Impact</h2>
+            <p class="section-subtitle fade-in">We're committed to making a difference in Northern Cape communities</p>
+            
+            <div class="impact-grid">
+                <div class="impact-item fade-in delay-1">
+                    <div class="impact-icon"><i class="fas fa-users"></i></div>
+                    <h4>Local Employment</h4>
+                    <p>We employ skilled workers from Postmasburg communities, providing stable income and skills development opportunities.</p>
+                </div>
+                
+                <div class="impact-item fade-in delay-2">
+                    <div class="impact-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h4>Youth Empowerment</h4>
+                    <p>Our company focuses on training and empowering young people with valuable trade skills for future employment.</p>
+                </div>
+                
+                <div class="impact-item fade-in delay-3">
+                    <div class="impact-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                    <h4>Poverty Eradication</h4>
+                    <p>Through job creation and skills development, we actively contribute to poverty eradication in our community.</p>
+                </div>
+                
+                <div class="impact-item fade-in">
+                    <div class="impact-icon"><i class="fas fa-building"></i></div>
+                    <h4>Black SMME Support</h4>
+                    <p>As an emerging black-owned business, we understand the challenges and actively support other SMMEs in the region.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="section section-light">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Certifications</h2>
+            <p class="section-subtitle fade-in">Fully compliant and certified for all your project requirements</p>
+            
+            <div class="certs-grid">
+                <div class="cert-item fade-in delay-1">
+                    <div class="cert-icon"><i class="fas fa-file-contract"></i></div>
+                    <h4>B-BBEE Level 1</h4>
+                    <p>135% procurement recognition as a 100% Black-owned enterprise</p>
+                </div>
+                <div class="cert-item fade-in delay-2">
+                    <div class="cert-icon"><i class="fas fa-building"></i></div>
+                    <h4>Registered Company</h4>
+                    <p>Formally registered with CIPC (2014/213362/07)</p>
+                </div>
+                <div class="cert-item fade-in delay-3">
+                    <div class="cert-icon"><i class="fas fa-receipt"></i></div>
+                    <h4>Tax Compliant</h4>
+                    <p>In good standing with SARS and all regulatory bodies</p>
+                </div>
+                <div class="cert-item fade-in">
+                    <div class="cert-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h4>Fully Insured</h4>
+                    <p>Comprehensive insurance coverage for all projects</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="fade-in">Ready to Start Your Project?</h2>
+            <p class="fade-in">Get in touch with us today for a free consultation and quote. Let's build something great together.</p>
+            <a href="contact.html" class="cta-button fade-in"><i class="fas fa-paper-plane"></i> Contact Us Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Postmasburg Fencing</h4>
+                    <p>Building Northern Cape communities through quality workmanship and community empowerment since 2012.</p>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> House 5377 Hakbosdraai, Newtown, Postmasburg 8420</a></li>
+                        <li><a href="tel:0739616084"><i class="fas fa-phone"></i> 073 961 6084</a></li>
+                        <li><a href="mailto:postmasburgfencing@mail.com"><i class="fas fa-envelope"></i> postmasburgfencing@mail.com</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html"><i class="fas fa-fence"></i> Fencing</a></li>
+                        <li><a href="services.html"><i class="fas fa-faucet"></i> Plumbing</a></li>
+                        <li><a href="services.html"><i class="fas fa-paint-roller"></i> Painting</a></li>
+                        <li><a href="services.html"><i class="fas fa-leaf"></i> Garden Services</a></li>
+                        <li><a href="services.html"><i class="fas fa-broom"></i> Cleaning Services</a></li>
+                        <li><a href="services.html"><i class="fas fa-road"></i> Paving</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="projects.html"><i class="fas fa-briefcase"></i> Projects</a></li>
+                        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Postmasburg Fencing (Pty) Ltd. All rights reserved. | Reg: 2014/213362/07 | B-BBEE Level 1</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    // Close mobile menu if open
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                    
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Back to top button
+        const backToTopBtn = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        // Animation observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = entry.target.getAttribute('data-delay') || '0s';
+                    entry.target.style.animationFillMode = 'forwards';
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in and slide-in elements
+        document.querySelectorAll('.fade-in, .slide-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Initialize animations for elements already in view
+        document.querySelectorAll('.fade-in, .slide-in').forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                el.style.animationPlayState = 'running';
+            }
+        });
+    </script>
+</body>
+</html>
