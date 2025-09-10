@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services - Postmasburg Fencing</title>
+    <title>Contact Us - Postmasburg Fencing</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -151,7 +151,7 @@
         /* Page Header */
         .page-header {
             background: linear-gradient(rgba(26, 71, 42, 0.85), rgba(45, 90, 61, 0.85)), 
-                        url('https://images.unsplash.com/photo-1581578021517-5d8ad8597850?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
+                        url('https://images.unsplash.com/photo-1519241047957-be31d7379a5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
             background-size: cover;
             background-position: center;
             color: var(--white);
@@ -228,238 +228,245 @@
             font-size: 1.1rem;
         }
         
-        /* Services Grid */
-        .services-grid {
+        /* Contact Grid */
+        .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
         }
         
-        .service-card {
-            background: linear-gradient(135deg, var(--white) 0%, var(--light) 100%);
+        .contact-info-section {
+            background: linear-gradient(135deg, var(--light) 0%, #e9ecef 100%);
+            padding: 40px;
             border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            position: relative;
+            height: fit-content;
+            position: sticky;
+            top: 140px;
         }
         
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-        
-        .service-image {
-            height: 200px;
-            background-color: var(--primary-light);
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-        
-        .service-content {
-            padding: 25px;
-            border-top: 4px solid var(--accent);
-        }
-        
-        .service-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-        
-        .service-card h3 {
+        .contact-info-section h3 {
             color: var(--primary-dark);
-            margin-bottom: 15px;
-            font-size: 1.4rem;
+            margin-bottom: 25px;
+            font-size: 1.5rem;
         }
         
-        .service-card p {
-            color: var(--gray);
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-        
-        .service-features {
-            list-style: none;
+        .contact-item-detail {
+            display: flex;
+            align-items: flex-start;
             margin-bottom: 25px;
         }
         
-        .service-features li {
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--gray);
-        }
-        
-        .service-features i {
-            color: var(--accent);
-        }
-        
-        .service-cta {
-            display: inline-block;
+        .contact-icon {
+            width: 50px;
+            height: 50px;
             background: var(--primary);
-            color: var(--white);
-            padding: 10px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .service-cta:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-        
-        /* Service Detail Tabs */
-        .service-detail {
-            margin-top: 80px;
-        }
-        
-        .tabs {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 30px;
-            justify-content: center;
-        }
-        
-        .tab-btn {
-            padding: 12px 25px;
-            background: var(--light);
-            border: none;
-            border-radius: 50px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .tab-btn.active {
-            background: var(--primary);
-            color: var(--white);
-        }
-        
-        .tab-content {
-            display: none;
-        }
-        
-        .tab-content.active {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .detail-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-        
-        .detail-image {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            height: 400px;
-            background-color: var(--primary-light);
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .detail-text h3 {
-            color: var(--primary-dark);
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-        }
-        
-        .detail-text p {
-            color: var(--gray);
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-        
-        .detail-features {
-            list-style: none;
-            margin-bottom: 30px;
-        }
-        
-        .detail-features li {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--gray);
-        }
-        
-        .detail-features i {
-            color: var(--accent);
-        }
-        
-        /* Process Section */
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            counter-reset: process;
-        }
-        
-        .process-step {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            text-align: center;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-        
-        .process-step:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-        }
-        
-        .process-step:before {
-            counter-increment: process;
-            content: counter(process);
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 40px;
-            background: var(--accent);
             color: var(--white);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
             font-size: 1.2rem;
         }
         
-        .process-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-            margin-top: 10px;
+        .contact-text {
+            flex: 1;
         }
         
-        .process-step h4 {
+        .contact-text h4 {
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .contact-text p, .contact-text a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-text a:hover {
+            color: var(--accent);
+        }
+        
+        .business-hours {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .business-hours h4 {
             color: var(--primary-dark);
             margin-bottom: 15px;
+        }
+        
+        .hours-list {
+            list-style: none;
+        }
+        
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            color: var(--gray);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
             font-size: 1.2rem;
         }
         
-        .process-step p {
+        .social-link:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .contact-form h3 {
+            color: var(--primary-dark);
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--primary-dark);
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            font-family: inherit;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .submit-btn {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+        }
+        
+        .submit-btn:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Map Section */
+        .map-section {
+            margin-top: 80px;
+        }
+        
+        .map-container {
+            height: 450px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 80px;
+        }
+        
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .faq-item {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .faq-question {
+            padding: 20px;
+            background: var(--primary);
+            color: var(--white);
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .faq-question i {
+            font-size: 1.2rem;
+        }
+        
+        .faq-answer {
+            padding: 20px;
             color: var(--gray);
             line-height: 1.6;
         }
@@ -470,6 +477,7 @@
             color: var(--white);
             text-align: center;
             padding: 80px 0;
+            margin-top: 80px;
         }
         
         .cta-section h2 {
@@ -599,8 +607,8 @@
         
         /* Responsive Design */
         @media (max-width: 1024px) {
-            .detail-grid {
-                gap: 30px;
+            .contact-grid, .faq-grid {
+                gap: 40px;
             }
         }
         
@@ -641,23 +649,17 @@
                 font-size: 2.5rem;
             }
             
-            .detail-grid {
+            .contact-grid, .faq-grid, .form-row {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
             
-            .detail-image {
-                height: 300px;
-                order: -1;
+            .contact-info-section {
+                position: static;
             }
             
             .section-title {
                 font-size: 2rem;
-            }
-            
-            .tabs {
-                flex-direction: column;
-                align-items: center;
             }
         }
         
@@ -670,8 +672,8 @@
                 font-size: 2rem;
             }
             
-            .service-content, .process-step {
-                padding: 20px;
+            .contact-info-section, .contact-form {
+                padding: 25px 20px;
             }
             
             .section-title {
@@ -764,9 +766,9 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="services.html">Services</a></li>
                 <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
             <button class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
@@ -777,221 +779,188 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1 class="fade-in">Our Services</h1>
+            <h1 class="fade-in">Get In Touch</h1>
             <ul class="breadcrumb">
                 <li><a href="index.html">Home</a></li>
-                <li>Services</li>
+                <li>Contact</li>
             </ul>
         </div>
     </section>
 
-    <!-- Services Grid -->
+    <!-- Contact Section -->
     <section class="section section-dark">
         <div class="container">
-            <h2 class="section-title fade-in">Comprehensive Services</h2>
-            <p class="section-subtitle fade-in">From fencing to plumbing, we offer a wide range of professional services to meet your needs</p>
+            <h2 class="section-title fade-in">Contact Us</h2>
+            <p class="section-subtitle fade-in">Reach out to us for a free consultation and quote. We're here to help with all your fencing, plumbing, and construction needs.</p>
             
-            <div class="services-grid">
-                <!-- Fencing Service -->
-                <div class="service-card fade-in delay-1">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="service-content">
-                        <div class="service-icon"><i class="fas fa-fence"></i></div>
-                        <h3>Professional Fencing</h3>
-                        <p>Specializing in all types of fencing solutions for residential, commercial, and industrial properties.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Security fencing</li>
-                            <li><i class="fas fa-check"></i> Boundary fencing</li>
-                            <li><i class="fas fa-check"></i> Pool fencing</li>
-                            <li><i class="fas fa-check"></i> Mine security fencing</li>
+            <div class="contact-grid">
+                <div class="contact-info-section slide-in">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="contact-item-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Address</h4>
+                            <p>House 5377 Hakbosdraai, Newtown, Postmasburg, 8420</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Phone Numbers</h4>
+                            <p><a href="tel:0739616084">073 961 6084</a></p>
+                            <p><a href="tel:0603255285">060 325 5285</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p><a href="mailto:postmasburgfencing@mail.com">postmasburgfencing@mail.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Owner</h4>
+                            <p>Mr. Andries Jacobs</p>
+                        </div>
+                    </div>
+                    
+                    <div class="business-hours">
+                        <h4>Business Hours</h4>
+                        <ul class="hours-list">
+                            <li><span>Monday - Friday:</span> <span>8:00 AM - 5:00 PM</span></li>
+                            <li><span>Saturday:</span> <span>9:00 AM - 1:00 PM</span></li>
+                            <li><span>Sunday:</span> <span>Closed</span></li>
                         </ul>
-                        <a href="#fencing" class="service-cta">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:postmasburgfencing@mail.com" class="social-link"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
                 
-                <!-- Plumbing Service -->
-                <div class="service-card fade-in delay-2">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="service-content">
-                        <div class="service-icon"><i class="fas fa-faucet"></i></div>
-                        <h3>Plumbing Services</h3>
-                        <p>Comprehensive plumbing solutions with 12 years of expertise for residential and commercial properties.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Pipe installation & repair</li>
-                            <li><i class="fas fa-check"></i> Leak detection & repair</li>
-                            <li><i class="fas fa-check"></i> Bathroom & kitchen plumbing</li>
-                            <li><i class="fas fa-check"></i> Emergency plumbing services</li>
-                        </ul>
-                        <a href="#plumbing" class="service-cta">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                
-                <!-- Painting Service -->
-                <div class="service-card fade-in delay-3">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1560032779-0a8809186efd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="service-content">
-                        <div class="service-icon"><i class="fas fa-paint-roller"></i></div>
-                        <h3>Painting Services</h3>
-                        <p>Transform your spaces with our professional painting services for interior and exterior surfaces.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Interior painting</li>
-                            <li><i class="fas fa-check"></i> Exterior painting</li>
-                            <li><i class="fas fa-check"></i> Wallpaper installation</li>
-                            <li><i class="fas fa-check"></i> Surface preparation</li>
-                        </ul>
-                        <a href="#painting" class="service-cta">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                
-                <!-- Garden Services -->
-                <div class="service-card fade-in delay-4">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="service-content">
-                        <div class="service-icon"><i class="fas fa-leaf"></i></div>
-                        <h3>Garden Services</h3>
-                        <p>Complete garden services to enhance your outdoor spaces with beautiful and functional landscapes.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Landscape design</li>
-                            <li><i class="fas fa-check"></i> Lawn maintenance</li>
-                            <li><i class="fas fa-check"></i> Irrigation systems</li>
-                            <li><i class="fas fa-check"></i> Garden cleanup</li>
-                        </ul>
-                        <a href="#garden" class="service-cta">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                
-                <!-- Cleaning Services -->
-                <div class="service-card fade-in delay-5">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1581578021517-5d8ad8597850?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="service-content">
-                        <div class="service-icon"><i class="fas fa-broom"></i></div>
-                        <h3>Cleaning Services</h3>
-                        <p>Professional cleaning solutions for residential and commercial properties to maintain clean environments.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Office cleaning</li>
-                            <li><i class="fas fa-check"></i> Industrial cleaning</li>
-                            <li><i class="fas fa-check"></i> Post-construction cleanup</li>
-                            <li><i class="fas fa-check"></i> Specialized cleaning</li>
-                        </ul>
-                        <a href="#cleaning" class="service-cta">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                
-                <!-- Paving Services -->
-                <div class="service-card fade-in">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1621550170445-6ee2b1e91c6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="service-content">
-                        <div class="service-icon"><i class="fas fa-road"></i></div>
-                        <h3>Paving Services</h3>
-                        <p>Expert paving and construction services including driveways, walkways, and general building work.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Driveway paving</li>
-                            <li><i class="fas fa-check"></i> Patio & walkway paving</li>
-                            <li><i class="fas fa-check"></i> Retaining walls</li>
-                            <li><i class="fas fa-check"></i> Brickwork & stonework</li>
-                        </ul>
-                        <a href="#paving" class="service-cta">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
+                <div class="contact-form fade-in">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Required *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="fencing">Fencing</option>
+                                <option value="plumbing">Plumbing</option>
+                                <option value="painting">Painting</option>
+                                <option value="garden">Garden Services</option>
+                                <option value="cleaning">Cleaning Services</option>
+                                <option value="paving">Paving</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Project Details *</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your project requirements" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Service Detail Tabs -->
-    <section class="section service-detail section-light">
+    <!-- Map Section -->
+    <section class="section section-light">
         <div class="container">
-            <h2 class="section-title fade-in">Service Details</h2>
-            <p class="section-subtitle fade-in">Learn more about our specialized services and how we can help with your project</p>
-            
-            <div class="tabs">
-                <button class="tab-btn active" data-tab="fencing">Fencing</button>
-                <button class="tab-btn" data-tab="plumbing">Plumbing</button>
-                <button class="tab-btn" data-tab="painting">Painting</button>
-                <button class="tab-btn" data-tab="garden">Garden Services</button>
-                <button class="tab-btn" data-tab="cleaning">Cleaning</button>
-                <button class="tab-btn" data-tab="paving">Paving</button>
-            </div>
-            
-            <!-- Fencing Detail -->
-            <div class="tab-content active" id="fencing">
-                <div class="detail-grid">
-                    <div class="detail-image" style="background-image: url('https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="detail-text">
-                        <h3>Professional Fencing Solutions</h3>
-                        <p>With years of experience in the industry, we provide high-quality fencing solutions for residential, commercial, and industrial clients. Our fencing services include security fencing for mining operations, boundary fencing for properties, pool fencing for safety compliance, and decorative fencing to enhance your property's appearance.</p>
-                        <p>We use only the highest quality materials and employ skilled craftsmen to ensure that every fencing project is completed to the highest standards of quality and durability.</p>
-                        <ul class="detail-features">
-                            <li><i class="fas fa-check"></i> Custom fencing designs</li>
-                            <li><i class="fas fa-check"></i> Security and safety compliance</li>
-                            <li><i class="fas fa-check"></i> Durable materials</li>
-                            <li><i class="fas fa-check"></i> Professional installation</li>
-                            <li><i class="fas fa-check"></i> Maintenance and repairs</li>
-                        </ul>
-                        <a href="contact.html" class="service-cta">Get a Quote <i class="fas fa-arrow-right"></i></a>
-                    </div>
+            <div class="map-section">
+                <h2 class="section-title fade-in">Our Location</h2>
+                <p class="section-subtitle fade-in">We're located in Postmasburg, serving the entire Northern Cape region</p>
+                
+                <div class="map-container fade-in">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55210.25270051332!2d23.06553136953124!3d-28.33392799999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e8e4d6c7d9f8b1f%3A0x1e8e4d6c7d9f8b1f!2sPostmasburg%2C%208420!5e0!3m2!1sen!2sza!4v1651234567890!5m2!1sen!2sza" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
-            
-            <!-- Plumbing Detail -->
-            <div class="tab-content" id="plumbing">
-                <div class="detail-grid">
-                    <div class="detail-image" style="background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="detail-text">
-                        <h3>Expert Plumbing Services</h3>
-                        <p>With 12 years of plumbing expertise, we offer comprehensive plumbing solutions for both residential and commercial properties. Our services include pipe installation and repair, leak detection and repair, bathroom and kitchen plumbing, and emergency plumbing services.</p>
-                        <p>We pride ourselves on our attention to detail, quality workmanship, and reliable service. Whether you need a simple repair or a complete plumbing system installation, we have the skills and experience to get the job done right.</p>
-                        <ul class="detail-features">
-                            <li><i class="fas fa-check"></i> Pipe installation & repair</li>
-                            <li><i class="fas fa-check"></i> Leak detection & repair</li>
-                            <li><i class="fas fa-check"></i> Bathroom & kitchen plumbing</li>
-                            <li><i class="fas fa-check"></i> Emergency plumbing services</li>
-                            <li><i class="fas fa-check"></i> Water heater installation</li>
-                        </ul>
-                        <a href="contact.html" class="service-cta">Get a Quote <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Additional tab contents would go here -->
-            
         </div>
     </section>
 
-    <!-- Process Section -->
+    <!-- FAQ Section -->
     <section class="section section-dark">
         <div class="container">
-            <h2 class="section-title fade-in">Our Process</h2>
-            <p class="section-subtitle fade-in">How we deliver exceptional results for every project</p>
-            
-            <div class="process-grid">
-                <div class="process-step fade-in delay-1">
-                    <div class="process-icon"><i class="fas fa-comments"></i></div>
-                    <h4>Consultation</h4>
-                    <p>We begin by understanding your needs, budget, and timeline through a detailed consultation.</p>
-                </div>
+            <div class="faq-section">
+                <h2 class="section-title fade-in">Frequently Asked Questions</h2>
+                <p class="section-subtitle fade-in">Find answers to common questions about our services</p>
                 
-                <div class="process-step fade-in delay-2">
-                    <div class="process-icon"><i class="fas fa-ruler-combined"></i></div>
-                    <h4>Planning</h4>
-                    <p>Our team creates a detailed plan and provides a transparent quote for your project.</p>
-                </div>
-                
-                <div class="process-step fade-in delay-3">
-                    <div class="process-icon"><i class="fas fa-hard-hat"></i></div>
-                    <h4>Execution</h4>
-                    <p>We execute the project with precision, keeping you informed at every stage of the process.</p>
-                </div>
-                
-                <div class="process-step fade-in delay-4">
-                    <div class="process-icon"><i class="fas fa-clipboard-check"></i></div>
-                    <h4>Quality Check</h4>
-                    <p>We perform rigorous quality checks to ensure everything meets our high standards.</p>
-                </div>
-                
-                <div class="process-step fade-in">
-                    <div class="process-icon"><i class="fas fa-handshake"></i></div>
-                    <h4>Completion</h4>
-                    <p>We deliver the completed project and provide after-service support if needed.</p>
+                <div class="faq-grid">
+                    <div class="faq-item fade-in delay-1">
+                        <div class="faq-question">
+                            <i class="fas fa-question-circle"></i>
+                            How long does a typical fencing project take?
+                        </div>
+                        <div class="faq-answer">
+                            The duration of a fencing project depends on the size and complexity. A standard residential fence can take 2-5 days, while larger commercial projects may take 1-3 weeks. We'll provide a timeline during our consultation.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item fade-in delay-2">
+                        <div class="faq-question">
+                            <i class="fas fa-question-circle"></i>
+                            Are you available for emergency plumbing services?
+                        </div>
+                        <div class="faq-answer">
+                            Yes, we offer emergency plumbing services for urgent issues like burst pipes, severe leaks, and blocked drains. Call us at <a href="tel:0739616084">073 961 6084</a> for immediate assistance.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item fade-in delay-3">
+                        <div class="faq-question">
+                            <i class="fas fa-question-circle"></i>
+                            Do you provide free quotes?
+                        </div>
+                        <div class="faq-answer">
+                            Yes, we offer free, no-obligation quotes for all our services. Contact us to schedule an assessment and we'll provide a detailed estimate for your project.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item fade-in delay-4">
+                        <div class="faq-question">
+                            <i class="fas fa-question-circle"></i>
+                            What areas do you serve?
+                        </div>
+                        <div class="faq-answer">
+                            We primarily serve Postmasburg and the surrounding Northern Cape areas. For larger projects, we may travel to other locations - contact us to discuss your specific needs.
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1003,8 +972,8 @@
             <h2 class="fade-in">Ready to Start Your Project?</h2>
             <p class="fade-in">Get in touch with us today for a free consultation and quote. Let's build something great together.</p>
             <div class="cta-buttons">
-                <a href="contact.html" class="cta-button fade-in"><i class="fas fa-paper-plane"></i> Get a Free Quote</a>
-                <a href="tel:0739616084" class="cta-button secondary fade-in"><i class="fas fa-phone"></i> Call Us Now</a>
+                <a href="tel:0739616084" class="cta-button fade-in"><i class="fas fa-phone"></i> Call Us Now</a>
+                <a href="mailto:postmasburgfencing@mail.com" class="cta-button secondary fade-in"><i class="fas fa-envelope"></i> Send an Email</a>
             </div>
         </div>
     </section>
@@ -1038,6 +1007,7 @@
                     <ul class="footer-links">
                         <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
                         <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="services.html"><i class="fas fa-briefcase"></i> Services</a></li>
                         <li><a href="projects.html"><i class="fas fa-briefcase"></i> Projects</a></li>
                         <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
                     </ul>
@@ -1062,23 +1032,24 @@
                 '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         });
 
-        // Tab functionality
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        const tabContents = document.querySelectorAll('.tab-content');
-        
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons and contents
-                tabBtns.forEach(b => b.classList.remove('active'));
-                tabContents.forEach(c => c.classList.remove('active'));
-                
-                // Add active class to clicked button
-                btn.classList.add('active');
-                
-                // Show corresponding content
-                const tabId = btn.getAttribute('data-tab');
-                document.getElementById(tabId).classList.add('active');
-            });
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simple form validation
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !phone || !service || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Simulate form submission
+            alert('Thank you for your message, ' + name + '! We will contact you within 24 hours to discuss your ' + service + ' requirements.');
+            this.reset();
         });
 
         // Smooth scrolling for navigation links
